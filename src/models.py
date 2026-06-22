@@ -1,8 +1,13 @@
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegressionCV
 from lightgbm import LGBMClassifier
 from sklearn.metrics import roc_auc_score
-import pandas as pd
+
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from xgboost import XGBClassifier
+from catboost import CatBoostClassifier
 
 def load_data():
     df = pd.read_csv('data/processed_data/processed_dataset.csv')
@@ -11,16 +16,12 @@ def load_data():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, stratify=y, random_state=42)
     return X_train, X_test, y_train, y_test
 
-from sklearn.linear_model import LogisticRegression
-
 def get_logistic_model():
     model = LogisticRegression(
         max_iter=1000,
         class_weight="balanced"
     )
     return model
-
-from sklearn.ensemble import RandomForestClassifier
 
 def get_random_forest():
     model = RandomForestClassifier(
@@ -31,9 +32,6 @@ def get_random_forest():
         random_state=42
     )
     return model
-
-
-from lightgbm import LGBMClassifier
 
 def get_lightgbm_model():
     model = LGBMClassifier(
@@ -47,8 +45,6 @@ def get_lightgbm_model():
     )
     return model
 
-from xgboost import XGBClassifier
-
 def get_xgboost_model():
     model = XGBClassifier(
         n_estimators=800,
@@ -61,8 +57,6 @@ def get_xgboost_model():
         random_state=42
     )
     return model
-
-from catboost import CatBoostClassifier
 
 def get_catboost_model():
     model = CatBoostClassifier(
