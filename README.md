@@ -1,4 +1,4 @@
-# IEEE-CIS Fraud Detection – End-to-End ML Pipeline
+# IEEE-CIS Fraud Detection
 
 This project is a structured machine learning pipeline built on the IEEE-CIS Fraud Detection dataset from Kaggle.  
 The goal is to detect fraudulent transactions using real-world feature engineering and scalable ML models.
@@ -34,6 +34,8 @@ Both datasets are merged using: TransactionID
 
 ## Project Structure
 
+```text
+
 IEEE-CIS-Fraud-Detection/
 
 data/
@@ -51,7 +53,7 @@ eda/
 main.py
 requirements.txt
 README.md
-
+```
 ---
 
 ## ML Pipeline Overview
