@@ -36,19 +36,21 @@ Both datasets are merged using: TransactionID
 
 IEEE-CIS-Fraud-Detection/
 
--data/
-    -raw/ # Original Kaggle dataset
-    -processed/ # Merged and feature-engineered data
-    -dowload_data.py
--src/
-    -models.py
-    -processed_data.py
--eda/
-- eda.ipynb
+data/
+    raw/                # original Kaggle dataset
+    processed/          # cleaned + engineered data
+    download_data.py    # script to fetch data
 
--main.py
--requirements.txt
--README.md
+src/
+    models.py
+    process_data.py
+
+eda/
+    eda.ipynb
+
+main.py
+requirements.txt
+README.md
 
 ---
 
